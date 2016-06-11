@@ -10,14 +10,13 @@
   $napok = array("vasárnap ☺", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat ☺");
   $napneve = $napok[date('w')];
   
-function negyzetszam($number) {
-  if ( pow(floor(sqrt($number)), 2) == $number) {
-    return true;
-  } else {
-    return false;
+  function negyzetszam($number) {
+    if (pow(floor(sqrt($number)), 2) == $number) {
+      return true;
+    } else {
+      return false;
+    }
   }
-}
-
 
 function is_prime($number)
 {
@@ -45,37 +44,14 @@ function is_prime($number)
     }
 }
 
-function cube( $c ) {
-  $x = 3;
 
-  do {
-    $x = $x - (pow($x,3) - $c)/(3*pow($x,2));
-    $count++;
-  } while($count < 50);
-
-  return $x;
-}
-
-function kobgyok($number) {
-  if ( floor(cube($number)) == cube($number) ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function kobgyok2($number) 
-{
-  for ( $i = 0 ; $i < $number ; ++$i )  
-  {
-    if($i*$i*$i==$number)
-    {
-      return true;
+  function kobgyok2($number) {
+    for ($i = 0; $i < $number; ++$i) {
+      if ($i*$i*$i == $number) {
+        return true;
     }
   }  
-  
   return false;
-
 }
 
 
@@ -110,64 +86,61 @@ function kobgyok2($number)
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta http-equiv="cache-control" content="no-cache" />
-  <meta name="Author" content="David Ebert" />
-  <meta name="Description" content="Days passed since 3/31/2015." />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Március</title>
-  <link rel="home" href="http://www.ebertek.com/" />
-  <link rel="stylesheet" href="styles/marcius.css" type="text/css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-</head>
 
-<body>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="Author" content="David Ebert" />
+    <meta name="Description" content="Days passed since 3/31/2015." />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Március</title>
+    <link rel="home" href="http://www.ebertek.com/" />
+    <link rel="stylesheet" href="styles/marcius.css" type="text/css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
 
-  <div id="main">
-    <h1>2015. március <?php
-      if (is_prime($marcius)) {
-        echo '<span class="prime">' . $marcius . '</span>';
-      } else if (negyzetszam($marcius)) {
-        echo '<span class="quad">' . pow($marcius, 1/2) . '²</span>';
-      } else if (kobgyok2($marcius)) {
-        echo '<span class="quad">' . pow($marcius, 1/3) . '³</span>';
-      } else {
-        echo $marcius;
-      }
-      echo '., ' . $napneve; ?></h1>
-    <p class="march">
-      2016. március <?php
-      if (is_prime($marcius2)) {
-        echo '<span class="prime">' . $marcius2 . '</span>';
-      } else if (negyzetszam($marcius2)) {
-        echo '<span class="quad">' . pow($marcius2, 1/2) . '²</span>';
-      } else if (kobgyok2($marcius2)) {
-        echo '<span class="quad">' . pow($marcius2, 1/3) . '³</span>';
-      } else {
-        echo $marcius2;
-      }
-      echo '., ' . $napneve; ?>
+  <body>
 
-      <?php
-        //
-/*        $abc1 = cube($marcius);
-        $abc2 = floor(cube($marcius));
-        echo $abc1;
-        echo '<br />';
-        echo $abc2; 
-  $myFile = "pocok.txt";
-  $fh = fopen($myFile, 'a');
-  $stringData = date("n/j/Y g:i:s");
-  fwrite($fh, $stringData . "\r\n");
-  fwrite($fh, $status);
-  fwrite($fh, "\r\n\r\n--------\r\n");
-  fclose($fh); */
-      ?>
-    </p>
-  </div>
+    <div id="main">
+      <h1>2015. március <?php
+        if (is_prime($marcius)) {
+          echo '<span class="prime">' . $marcius . '</span>';
+        } else if (negyzetszam($marcius)) {
+          echo '<span class="quad">' . pow($marcius, 1/2) . '²</span>';
+        } else if (kobgyok2($marcius)) {
+          echo '<span class="quad">' . pow($marcius, 1/3) . '³</span>';
+        } else {
+          echo $marcius;
+        }
+        echo '., ' . $napneve; ?></h1>
+      <p class="march">
+        2016. március <?php
+        if (is_prime($marcius2)) {
+          echo '<span class="prime">' . $marcius2 . '</span>';
+        } else if (negyzetszam($marcius2)) {
+          echo '<span class="quad">' . pow($marcius2, 1/2) . '²</span>';
+        } else if (kobgyok2($marcius2)) {
+          echo '<span class="quad">' . pow($marcius2, 1/3) . '³</span>';
+        } else {
+          echo $marcius2;
+        }
+        echo '., ' . $napneve; ?>
 
-</body>
+        <?php
+          /*
+          $myFile = "pocok.txt";
+          $fh = fopen($myFile, 'a');
+          $stringData = date("n/j/Y g:i:s");
+          fwrite($fh, $stringData . "\r\n");
+          fwrite($fh, $status);
+          fwrite($fh, "\r\n\r\n--------\r\n");
+          fclose($fh);
+          */
+        ?>
+      </p>
+    </div>
+
+  </body>
 
 </html>
