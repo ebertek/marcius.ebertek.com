@@ -1,0 +1,66 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: #fff;
+  text-shadow: 0px 1px 1px #000;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  line-height: 2em;
+}
+
+body {
+  background-color: gray;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: color 0.2s ease-out;
+}
+
+a:link {
+  color: #fff;
+}
+
+a:hover {
+  color: #0ae;
+}
+
+a:visited:hover {
+  color: #0ae;
+}
+
+a:active {
+  color: #ea0;
+}
+
+a:visited {
+  color: #eae;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+.prime {
+  color: red;
+}
+
+.quad {
+  color: aqua;
+}
+
+.debug {
+  color: black;
+}
+
+.march {
+  text-align: center;
+}
