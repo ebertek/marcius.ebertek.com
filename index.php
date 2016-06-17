@@ -154,7 +154,7 @@ function is_prime($number)
         ?>
       </p>
       <div id="lampa" class="lampa <?php echo $lampac; ?>"><input type="hidden" name="lampad" id="lampad" value="<?php echo $lampad; ?>" /></div>
-      <p class="marcius"><a href="cal.php" title="Naptár">Naptár</a></p>
+      <p class="march"><a href="cal.php" title="Naptár">Naptár</a></p>
     </div>
 
   </body>
