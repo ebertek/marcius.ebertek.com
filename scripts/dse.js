@@ -47,6 +47,35 @@ var DSE = function (callback) {
   return dse;
 };
 
+function getXmlHttpRequestObject() {
+  if (window.XMLHttpRequest) {
+    return new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    return new ActiveXObject("Microsoft.XMLHTTP");
+  } else {
+    alert("Nem támogatott böngésző!");
+  }
+}
+
+var lampaReq = getXmlHttpRequestObject();
+
+function lampa_info() {
+  if (lampaReq.readyState == 4 || lampaReq.readyState == 0) {
+    var str = escape(document.getElementById('lampad').value);
+    lampaReq.open("GET", 'scripts/lampaf.php?lampad=' + str, true);
+    lampaReq.onreadystatechange = handlelampa_info;
+    lampaReq.send(null);
+  }
+}
+
+function handlelampa_info() {
+  if (lampaReq.readyState == 4 && lampaReq.status == 200) {
+    document.getElementById('lampad').value = lampaReq.responseText;
+  }
+}
+
 var easter_egg = new DSE(function() {
-  document.getElementById("lampa").className = "zold";
+  document.getElementById('lampa').className = "lampa zold";
+  document.getElementById('lampad').value = "1";
+  lampa_info();
 });

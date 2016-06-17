@@ -6,10 +6,10 @@
 
   $nap2 = '2016-02-29';
   $marcius2 = date_create()->diff(date_create($nap2))->days;
-  
+
   $napok = array("vasárnap ☺", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat ☺");
   $napneve = $napok[date('w')];
-  
+
   function negyzetszam($number) {
     if (pow(floor(sqrt($number)), 2) == $number) {
       return true;
@@ -36,7 +36,7 @@ function is_prime($number)
             break;
         }
     }
-    
+
     if( $x == $i-1 ) {
         return true;
     } else {
@@ -44,17 +44,16 @@ function is_prime($number)
     }
 }
 
-
   function kobgyok2($number) {
     for ($i = 0; $i < $number; ++$i) {
       if ($i*$i*$i == $number) {
         return true;
     }
-  }  
+  }
   return false;
 }
 
-
+/*
   if(!function_exists('apache_request_headers')) {
     function apache_request_headers() {
       $headers = array();
@@ -81,7 +80,7 @@ function is_prime($number)
   $ipcim = userIP();
   $refi = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'refi_hiba';
   $status = "$refi | $ipcim " . print_r(apache_request_headers(), true);
-
+*/
 ?>
 <!DOCTYPE html>
 
@@ -138,9 +137,24 @@ function is_prime($number)
           fwrite($fh, "\r\n\r\n--------\r\n");
           fclose($fh);
           */
+          $lampaf = file_get_contents('./lampa/' . date('Y-m') .'.txt', NULL, NULL, 0, 31); // teljes honap 0/1
+          $strlen = strlen($lampaf);
+          for ($i = 0; $i < $strlen; $i++) {
+            $c = substr($lampaf, $i, 1);
+            if (!($c == "0" || $c == "1")) {
+              $lampaf[$i] = "0";
+            }
+          }
+          $lampad = $lampaf[date('j')-1]; // mai nap 0/1
+          if ($lampad == "1") {
+            $lampac = "zold"; // lampa css class
+          } else {
+            $lampac = "piros";
+          }
         ?>
       </p>
-      <div id="lampa" class="piros"></div>
+      <div id="lampa" class="lampa <?php echo $lampac; ?>"><input type="hidden" name="lampad" id="lampad" value="<?php echo $lampad; ?>" /></div>
+      <p class="marcius"><a href="cal.php" title="Naptár">Naptár</a></p>
     </div>
 
   </body>

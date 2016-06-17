@@ -65,7 +65,7 @@ h1 {
   text-align: center;
 }
 
-#lampa {
+.lampa {
   width: 64px;
   height: 64px;
   margin: 0 auto;
@@ -80,4 +80,14 @@ h1 {
 
 .zold {
   background: green;
+}
+
+.cal {
+  display:inline-block;
+  margin: 8px;
+}
+
+#lampak {
+  width: 800px;
+  margin: 0 auto;
 }
