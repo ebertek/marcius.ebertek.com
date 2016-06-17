@@ -98,6 +98,7 @@ function is_prime($number)
     <link rel="home" href="http://www.ebertek.com/" />
     <link rel="stylesheet" href="styles/marcius.css" type="text/css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="scripts/dse.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
   <body>
@@ -139,6 +140,7 @@ function is_prime($number)
           */
         ?>
       </p>
+      <div id="lampa" class="piros"></div>
     </div>
 
   </body>

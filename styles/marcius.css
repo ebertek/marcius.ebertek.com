@@ -64,3 +64,20 @@ h1 {
 .march {
   text-align: center;
 }
+
+#lampa {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  -webkit-border-radius: 32px;
+     -moz-border-radius: 32px;
+          border-radius: 32px;
+}
+
+.piros {
+  background: red;
+}
+
+.zold {
+  background: green;
+}
