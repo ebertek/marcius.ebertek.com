@@ -78,8 +78,16 @@ h1 {
   background: red;
 }
 
+.sarga {
+  background: yellow;
+}
+
 .zold {
   background: green;
+}
+
+.fekete {
+  background: black;
 }
 
 .cal {

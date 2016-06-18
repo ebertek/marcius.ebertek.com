@@ -1,6 +1,12 @@
 /**
  * Secret Entry
- * https://github.com/snaptortoise/konami-js
+ * @ebertek
+ */
+
+/**
+ * Copyright (c) 2009 George Mandis (georgemandis.com, snaptortoise.com)
+ * Licensed under the MIT License (http://opensource.org/licenses/MIT)
+ * Code: https://github.com/snaptortoise/konami-js
  */
 
 var DSE = function (callback) {
@@ -47,6 +53,10 @@ var DSE = function (callback) {
   return dse;
 };
 
+/**
+ * End of Konami-JS
+ */
+
 function getXmlHttpRequestObject() {
   if (window.XMLHttpRequest) {
     return new XMLHttpRequest();
@@ -71,11 +81,16 @@ function lampa_info() {
 function handlelampa_info() {
   if (lampaReq.readyState == 4 && lampaReq.status == 200) {
     document.getElementById('lampad').value = lampaReq.responseText;
+    if (lampaReq.responseText == "1") {
+      document.getElementById('lampa').className = "lampa zold";
+    } else {
+      document.getElementById('lampa').className = "lampa fekete";
+    }
   }
 }
 
 var easter_egg = new DSE(function() {
-  document.getElementById('lampa').className = "lampa zold";
   document.getElementById('lampad').value = "1";
+  document.getElementById('lampa').className = "lampa sarga";
   lampa_info();
 });

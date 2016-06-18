@@ -23,8 +23,11 @@
 
     $lampaf[date('j')-1] = $lampad; // mai nap 0/1
 
-    file_put_contents('../lampa/' . date('Y-m') .'.txt', $lampaf);
-    echo $lampad;
+    if (file_put_contents('../lampa/' . date('Y-m') .'.txt', $lampaf, LOCK_EX) === FALSE) {
+      echo 0;
+    } else {
+      echo 1;
+    }
 
   }
 
