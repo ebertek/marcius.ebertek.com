@@ -1,5 +1,6 @@
 <?php
   setlocale(LC_TIME, "hu_HU");
+  date_default_timezone_set('Europe/Budapest');
   $nap = '2015-03-31';
   $marcius = 31+(date_create()->diff(date_create($nap))->days);
 //  $marcius = 125;
@@ -82,21 +83,25 @@ function is_prime($number)
   $status = "$refi | $ipcim " . print_r(apache_request_headers(), true);
 */
 ?>
-<!DOCTYPE html>
+<!doctype html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu-HU" lang="hu-HU">
 
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta name="Author" content="David Ebert" />
-    <meta name="Description" content="Days passed since 3/31/2015." />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Március</title>
-    <link rel="home" href="http://www.ebertek.com/" />
-    <link rel="stylesheet" href="styles/marcius.css" type="text/css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="Description" content="Days passed since 3/31/2015." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+
+    <link href="https://ebertek.com/" rel="home" />
+    <link href="humans.txt" rel="author" type="text/plain" />
+    <link href="styles/marcius.css" rel="stylesheet" type="text/css" />
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <script src="scripts/dse.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
