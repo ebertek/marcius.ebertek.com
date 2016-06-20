@@ -100,9 +100,9 @@ function is_prime($number)
 
     <link href="https://ebertek.com/" rel="home" />
     <link href="humans.txt" rel="author" type="text/plain" />
-    <link href="styles/marcius.css" rel="stylesheet" type="text/css" />
+    <link href="css/marcius.css" rel="stylesheet" type="text/css" />
     <link href="favicon.ico" rel="icon" type="image/x-icon" />
-    <script src="scripts/dse.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/dse.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
   <body>

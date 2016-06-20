@@ -72,7 +72,7 @@ var lampaReq = getXmlHttpRequestObject();
 function lampa_info() {
   if (lampaReq.readyState == 4 || lampaReq.readyState == 0) {
     var str = escape(document.getElementById('lampad').value);
-    lampaReq.open("GET", 'scripts/lampaf.php?lampad=' + str, true);
+    lampaReq.open("GET", 'js/lampaf.php?lampad=' + str, true);
     lampaReq.onreadystatechange = handlelampa_info;
     lampaReq.send(null);
   }
