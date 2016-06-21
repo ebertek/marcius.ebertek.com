@@ -144,7 +144,7 @@ function is_prime($number)
           */
           $lampaf = file_get_contents('./lampa/' . date('Y-m') .'.txt', NULL, NULL, 0, 31); // teljes honap 0/1
           $strlen = strlen($lampaf);
-          for ($i = 0; $i < $strlen; $i++) {
+          for ($i = 0; $i < $strlen; ++$i) {
             $c = substr($lampaf, $i, 1);
             if (!($c == "0" || $c == "1")) {
               $lampaf[$i] = "0";
