@@ -1,6 +1,6 @@
 /**
  * Secret Entry
- * @ebertek
+ * @author ebertek@ebertek.com (David Ebert)
  */
 
 /**
@@ -79,7 +79,7 @@ function lampa_info() {
 }
 
 function handlelampa_info() {
-  if (lampaReq.readyState == 4 && lampaReq.status == 200) {
+  if (lampaReq.readyState === 4 && lampaReq.status === 200) {
     document.getElementById('lampad').value = lampaReq.responseText;
     if (lampaReq.responseText == "1") {
       document.getElementById('lampa').className = "lampa zold";

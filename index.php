@@ -2,8 +2,7 @@
   setlocale(LC_TIME, "hu_HU");
   date_default_timezone_set('Europe/Budapest');
   $nap = '2015-03-31';
-  $marcius = 31+(date_create()->diff(date_create($nap))->days);
-//  $marcius = 125;
+  $marcius = 31 + (date_create()->diff(date_create($nap))->days);
 
   $nap2 = '2016-02-29';
   $marcius2 = date_create()->diff(date_create($nap2))->days;
@@ -19,47 +18,46 @@
     }
   }
 
-function is_prime($number)
-{
+  function is_prime($number) {
     // 1 is not prime
     if ( $number == 1 ) {
-        return false;
+      return false;
     }
     // 2 is the only even prime number
     if ( $number == 2 ) {
-        return true;
+      return true;
     }
     // square root algorithm speeds up testing of bigger prime numbers
     $x = sqrt($number);
     $x = floor($x);
-    for ( $i = 2 ; $i <= $x ; ++$i ) {
-        if ( $number % $i == 0 ) {
-            break;
-        }
+    for ($i = 2; $i <= $x; ++$i) {
+      if ( $number % $i == 0 ) {
+        break;
+      }
     }
 
-    if( $x == $i-1 ) {
-        return true;
+    if ($x == $i-1) {
+      return true;
     } else {
-        return false;
+      return false;
     }
 }
 
   function kobgyok2($number) {
     for ($i = 0; $i < $number; ++$i) {
-      if ($i*$i*$i == $number) {
+      if ($i * $i * $i == $number) {
         return true;
     }
   }
   return false;
 }
 
-/*
-  if(!function_exists('apache_request_headers')) {
+  /*
+  if (!function_exists('apache_request_headers')) {
     function apache_request_headers() {
       $headers = array();
       foreach($_SERVER as $key => $value) {
-        if(substr($key, 0, 5) == 'HTTP_') {
+        if (substr($key, 0, 5) == 'HTTP_') {
           $headers[str_replace(' ', '-', ucwords(str_replace('_', ' ', strtolower(substr($key, 5)))))] = $value;
         }
       }
@@ -71,7 +69,7 @@ function is_prime($number)
   {
     // ha van HTTP_X_FORWARDED_FOR, akkor proxy mogul netezik
     $userIP = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    if($userIP == "")
+    if ($userIP == "")
       {
       $userIP = $_SERVER['REMOTE_ADDR'];
     }
@@ -81,7 +79,7 @@ function is_prime($number)
   $ipcim = userIP();
   $refi = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'refi_hiba';
   $status = "$refi | $ipcim " . print_r(apache_request_headers(), true);
-*/
+  */
 ?>
 <!doctype html>
 
@@ -142,7 +140,7 @@ function is_prime($number)
           fwrite($fh, "\r\n\r\n--------\r\n");
           fclose($fh);
           */
-          $lampaf = file_get_contents('./lampa/' . date('Y-m') .'.txt', NULL, NULL, 0, 31); // teljes honap 0/1
+          $lampaf = file_get_contents('./lampa/' . date('Y-m') .'.txt', NULL, NULL, 0, 31);  // teljes honap 0/1
           $strlen = strlen($lampaf);
           for ($i = 0; $i < $strlen; ++$i) {
             $c = substr($lampaf, $i, 1);
@@ -150,9 +148,9 @@ function is_prime($number)
               $lampaf[$i] = "0";
             }
           }
-          $lampad = $lampaf[date('j')-1]; // mai nap 0/1
+          $lampad = $lampaf[date('j')-1];  // mai nap 0/1
           if ($lampad == "1") {
-            $lampac = "zold"; // lampa css class
+            $lampac = "zold";  // lampa css class
           } else {
             $lampac = "piros";
           }

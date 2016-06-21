@@ -7,7 +7,7 @@
   } else {
     $lampam = date('Y-m');
   }
-  $lampaf = file_get_contents('./lampa/' . $lampam .'.txt', NULL, NULL, 0, 31); // teljes honap 0/1
+  $lampaf = file_get_contents('./lampa/' . $lampam .'.txt', NULL, NULL, 0, 31);  // teljes honap 0/1
   $strlen = strlen($lampaf);
 
 ?>
