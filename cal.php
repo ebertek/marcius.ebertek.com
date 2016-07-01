@@ -2,7 +2,8 @@
   setlocale(LC_TIME, "hu_HU");
   date_default_timezone_set('Europe/Budapest');
 
-  if (isset($_GET['m']) && $_GET['m'] != '') {
+  $lampa_re = '/^\d{4}-\d{2}$/';
+  if (isset($_GET['m']) && $_GET['m'] != '' && preg_match($lampa_re, $_GET['m'])) {
     $lampam = $_GET['m'];
   } else {
     $lampam = date('Y-m');
