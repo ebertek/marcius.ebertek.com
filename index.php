@@ -81,12 +81,12 @@
   $status = "$refi | $ipcim " . print_r(apache_request_headers(), true);
   */
 ?>
-<!doctype html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu-HU" lang="hu-HU">
 
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Március</title>
     <meta name="Description" content="Days passed since 3/31/2015." />

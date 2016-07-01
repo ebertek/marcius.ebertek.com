@@ -11,12 +11,12 @@
   $strlen = strlen($lampaf);
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu-HU" lang="hu-HU">
 
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Március - naptár</title>
     <meta name="Description" content="Calendar." />
