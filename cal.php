@@ -8,9 +8,10 @@
   } else {
     $lampam = date('Y-m');
   }
-  $lampaf = file_get_contents('./lampa/' . $lampam .'.txt', NULL, NULL, 0, 31);  // teljes honap 0/1
+  $datum = explode("-", $lampam);
+  $napok = cal_days_in_month(CAL_GREGORIAN, $datum[1], $datum[0]);
+  $lampaf = file_get_contents('./lampa/' . $lampam .'.txt', NULL, NULL, 0, $napok);  // teljes honap 0/1
   $strlen = strlen($lampaf);
-
 ?>
 <!DOCTYPE html>
 
