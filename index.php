@@ -140,7 +140,13 @@
           fwrite($fh, "\r\n\r\n--------\r\n");
           fclose($fh);
           */
-          $lampaf = file_get_contents('./lampa/' . date('Y-m') .'.txt', NULL, NULL, 0, 31);  // teljes honap 0/1
+          $lampam = date('Y-m');
+          if (file_exists('./lampa/' . $lampam .'.txt')) {
+            $lampaf = file_get_contents('./lampa/' . $lampam .'.txt', NULL, NULL, 0, date('t'));  // teljes honap 0/1
+          } else {
+            $lampaf = "0000000000000000000000000000000";
+            file_put_contents('./lampa/' . $lampam .'.txt', $lampaf, LOCK_EX);
+          }
           $strlen = strlen($lampaf);
           for ($i = 0; $i < $strlen; ++$i) {
             $c = substr($lampaf, $i, 1);
